@@ -1,0 +1,37 @@
+  <%- include('../cabecalho.ejs')%>
+<main class="container">
+        <a href="/genero/lst" class="back-link">← Voltar para Generos</a>
+
+        <div class="form-container">
+            <h2>Editar Gênero</h2>
+            
+            <form method="post">
+               <div class="form-group">
+                    <label for="nome">id do Gênero *</label>
+                    <input 
+                        type="text" 
+                        id="id" 
+                        name="id"
+                        value="<%=genero.id%>"
+                        required
+                >
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome do Gênero *</label>
+                    <input 
+                        type="text" 
+                        id="nome" 
+                        name="nome" 
+                        value="<%=genero.nome%>"
+                        required
+                    >
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success">Editar</button>
+                    <a href="/genero/lst" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+<%- include('../rodape.ejs')%>

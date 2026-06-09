@@ -11,7 +11,8 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Ações</th>
+                        <th>Excluir</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,6 +20,7 @@
                         <tr>
                             <td><%= genero.nome %></td>
                             <td><a href="/genero/del/<%= genero.id %>" class="link">EXCLUIR</a></td>
+                            <td><a href="/genero/edt/<%= genero.id %>" class="link">EDITAR</a></td>
                         </tr>
                     <% }); %>
                 </tbody>

@@ -14,7 +14,8 @@
                         <th>Musica 1</th>
                         <th>Musica 2</th>
                         <th>Musica 3</th>
-                        <th>Ações</th>
+                        <th>Excluir</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +26,7 @@
                             <td><%= playlist.musica2 %></td>
                             <td><%= playlist.musica3 %></td>
                             <td><a href="/playlist/del/<%= playlist.id %>" class="link">EXCLUIR</a></td>
+                            <td><a href="/playlist/edt/<%= playlist.id %>" class="link">EDITAR</a></td>
                         </tr>
                     <% }); %>
                     

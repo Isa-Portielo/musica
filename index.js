@@ -42,6 +42,14 @@ app.get('/genero/del/:id', async (req, res) => {
 const genero = await Genero.findByIdAndDelete(req.params.id)
 res.redirect("/genero/lst")
 });
+app.get('/genero/edt/:id', async (req, res) => {
+const genero = await Genero.findById(req.params.id)
+res.render("genero/edt", {genero})
+});
+app.post('/genero/edt/:id', async (req, res) => {
+const genero = await Genero.findByIdAndUpdate(req.params.id, req.body)
+res.render("genero/edtok")
+});
 
 app.get("/musica/lst", async(req, res) => {
   const musicas = await Musica.find();
@@ -59,7 +67,14 @@ app.get('/musica/del/:id', async (req, res) => {
 const musica = await Musica.findByIdAndDelete(req.params.id)
 res.redirect("/musica/lst")
 });
-
+app.get('/musica/edt/:id', async (req, res) => {
+const musica = await Musica.findById(req.params.id)
+res.render("musica/edt", {musica})
+});
+app.post('/musica/edt/:id', async (req, res) => {
+const musica = await Musica.findByIdAndUpdate(req.params.id, req.body)
+res.render("musica/edtok")
+});
 
 app.get("/artista/lst", async(req, res) => {
   const artistas = await Artista.find();
@@ -77,7 +92,14 @@ app.get('/artista/del/:id', async (req, res) => {
 const artista = await Artista.findByIdAndDelete(req.params.id)
 res.redirect("/artista/lst")
 });
-
+app.get('/artista/edt/:id', async (req, res) => {
+const artista = await Artista.findById(req.params.id)
+res.render("artista/edt", {artista})
+});
+app.post('/artista/edt/:id', async (req, res) => {
+const artista = await Artista.findByIdAndUpdate(req.params.id, req.body)
+res.render("artista/edtok")
+});
 
 app.get("/playlist/lst", async(req, res) => {
   const playlists = await Playlist.find();
@@ -95,7 +117,14 @@ app.get('/playlist/del/:id', async (req, res) => {
 const playlist = await Playlist.findByIdAndDelete(req.params.id)
 res.redirect("/playlist/lst")
 });
-
+app.get('/playlist/edt/:id', async (req, res) => {
+const playlist = await Playlist.findById(req.params.id)
+res.render("playlist/edt", {playlist})
+});
+app.post('/playlist/edt/:id', async (req, res) => {
+const playlist = await Playlist.findByIdAndUpdate(req.params.id, req.body)
+res.render("playlist/edtok")
+});
 
 app.listen(PORT, ()=>{
  console.log(

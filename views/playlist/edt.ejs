@@ -1,0 +1,66 @@
+<%- include('../cabecalho.ejs')%>
+<main class="container">
+        <a href="/playlist/lst" class="back-link">← Voltar para Playlists</a>
+
+        <div class="form-container">
+            <h2>Editar Playlist</h2>
+            
+            <form method="post">
+              <div class="form-group">
+                    <label for="nome">ID da Playlist *</label>
+                    <input 
+                        type="text" 
+                        id="id" 
+                        name="id" 
+                        value="<%=playlist.id%>"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome da Playlist *</label>
+                    <input 
+                        type="text" 
+                        id="nome" 
+                        name="nome" 
+                        value="<%=playlist.nome%>"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="nome">Música 1 *</label>
+                    <input 
+                        type="text" 
+                        id="musica1" 
+                        name="musica1" 
+                        value="<%=playlist.musica1%>"
+                        required
+                    >
+                </div>
+                 <div class="form-group">
+                    <label for="nome">Música 2 *</label>
+                    <input 
+                        type="text" 
+                        id="musica2" 
+                        name="musica2" 
+                        value="<%=playlist.musica2%>"
+                        required
+                    >
+                </div>
+                 <div class="form-group">
+                    <label for="nome">Música 3 *</label>
+                    <input 
+                        type="text" 
+                        id="musica3" 
+                        name="musica3" 
+                        value="<%=playlist.musica3%>"
+                        required
+                    >
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success">Editar</button>
+                    <a href="/playlist/lst" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+<%- include('../rodape.ejs')%>

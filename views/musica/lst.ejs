@@ -13,8 +13,9 @@
                         <th>Título</th>
                         <th>Duração</th>
                         <th>Artista</th>
-                        <th>Ano</th>
-                        <th>Ações</th>
+                        <th>Ano de Lançamento</th>
+                        <th>Excluir</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +26,7 @@
                             <td><%= musica.artista %></td>
                             <td><%= musica.anoLancamento%></td>
                             <td><a href="/musica/del/<%= musica.id %>" class="link">EXCLUIR</a></td>
+                            <td><a href="/musica/edt/<%= musica.id %>" class="link">EDITAR</a></td>
                         </tr>
                     <% }); %>
                 </tbody>
