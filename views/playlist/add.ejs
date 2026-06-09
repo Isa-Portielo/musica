@@ -1,0 +1,53 @@
+<%- include('../cabecalho.ejs')%>
+<main class="container">
+        <a href="/playlist/lst" class="back-link">← Voltar para Playlists</a>
+
+        <div class="form-container">
+            <h2>Cadastrar Nova Playlist</h2>
+            
+            <form method="post">
+                <div class="form-group">
+                    <label for="nome">Nome da Playlist *</label>
+                    <input 
+                        type="text" 
+                        id="nome" 
+                        name="nome" 
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">musica1 *</label>
+                        <select id="musica1" name="musica1">
+                            <option value="">Selecione</option>
+                            <option value="A Loba - Alcione">A Loba - Alcione</option>
+                            <option value="Como Nossos Pais - Elis Regina">Como Nossos Pais - Elis Regina</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                </div>
+                 <div class="form-group">
+                    <label for="descricao">musica 2 *</label>
+                        <select id="musica2" name="musica2">
+                            <option value="">Selecione</option>
+                            <option value="Cowboy Fora da Lei - Raul Seixas">Cowboy Fora da Lei - Raul Seixas</option>
+                            <option value="Homem com H - Ney Matogrosso ">Homem com H - Ney Matogrosso </option>
+                            <option value="outro">Outro</option>
+                        </select>
+                </div>
+                 <div class="form-group">
+                    <label for="descricao">musica 3 *</label>
+                        <select id="musica3" name="musica3">
+                            <option value="">Selecione</option>
+                            <option value="Apesar de você - Chico Buarque">Apesar de você - Chico Buarque</option>
+                            <option value="Cálice - Chico Buarque, Milton Nascimento">Cálice - Chico Buarque, Milton Nascimento</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <a href="/playlist/lst" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+<%- include('../rodape.ejs')%>

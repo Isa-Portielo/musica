@@ -1,0 +1,34 @@
+<%- include('../cabecalho.ejs')%>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Lista de Playlists</h2>
+            <a href="/playlist/add" class="btn btn-success">+ Nova Playlist</a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Musica 1</th>
+                        <th>Musica 2</th>
+                        <th>Musica 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% playlists.forEach(function(playlist) { %>
+                        <tr>
+                            <td><%= playlist.nome %></td>
+                            <td><%= playlist.musica1 %></td>
+                            <td><%= playlist.musica2 %></td>
+                            <td><%= playlist.musica3 %></td>
+                        </tr>
+                    <% }); %>
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+<%- include('../rodape.ejs')%>
