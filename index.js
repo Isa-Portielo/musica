@@ -50,6 +50,15 @@ app.post('/genero/edt/:id', async (req, res) => {
 const genero = await Genero.findByIdAndUpdate(req.params.id, req.body)
 res.render("genero/edtok")
 });
+app.post('/genero/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const generos = await Genero.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("genero/lst", { generos });
+})
+
+
 
 app.get("/musica/lst", async(req, res) => {
   const musicas = await Musica.find();
@@ -75,6 +84,14 @@ app.post('/musica/edt/:id', async (req, res) => {
 const musica = await Musica.findByIdAndUpdate(req.params.id, req.body)
 res.render("musica/edtok")
 });
+app.post('/musica/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const musicas = await Musica.find({
+    titulo: new RegExp(pesquisar, 'i')
+  });
+  res.render("musica/lst", { musicas});
+})
+
 
 app.get("/artista/lst", async(req, res) => {
   const artistas = await Artista.find();
@@ -100,6 +117,14 @@ app.post('/artista/edt/:id', async (req, res) => {
 const artista = await Artista.findByIdAndUpdate(req.params.id, req.body)
 res.render("artista/edtok")
 });
+app.post('/artista/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const artistas = await Artista.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("artista/lst", { artistas });
+})
+
 
 app.get("/playlist/lst", async(req, res) => {
   const playlists = await Playlist.find();
@@ -125,6 +150,13 @@ app.post('/playlist/edt/:id', async (req, res) => {
 const playlist = await Playlist.findByIdAndUpdate(req.params.id, req.body)
 res.render("playlist/edtok")
 });
+app.post('/playlist/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const playlists = await Playlist.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("playlist/lst", { playlists });
+})
 
 app.listen(PORT, ()=>{
  console.log(
