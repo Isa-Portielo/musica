@@ -11,12 +11,14 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% generos.forEach(genero => { %>
                         <tr>
                             <td><%= genero.nome %></td>
+                            <td><a href="/genero/del/<%= genero.id %>" class="link">EXCLUIR</a></td>
                         </tr>
                     <% }); %>
                 </tbody>

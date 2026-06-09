@@ -13,6 +13,7 @@
                         <th>Nome</th>
                         <th>País</th>
                         <th>Ano Início</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +22,7 @@
                             <td><%= artista.nome %></td>
                             <td><%= artista.pais %></td>
                             <td><%= artista.anoInicio %></td>
+                            <td><a href="/artista/del/<%= artista.id %>" class="link">EXCLUIR</a></td>
                         </tr>
                     <% }); %>
                 </tbody>

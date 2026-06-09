@@ -14,6 +14,7 @@
                         <th>Duração</th>
                         <th>Artista</th>
                         <th>Ano</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,7 @@
                             <td><%= musica.duracao %></td>
                             <td><%= musica.artista %></td>
                             <td><%= musica.anoLancamento%></td>
+                            <td><a href="/musica/del/<%= musica.id %>" class="link">EXCLUIR</a></td>
                         </tr>
                     <% }); %>
                 </tbody>

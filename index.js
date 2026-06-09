@@ -38,6 +38,10 @@ app.post('/genero/add', async (req, res) => {
   await Genero.create({ nome});
   res.render("genero/addok");
 });
+app.get('/genero/del/:id', async (req, res) => {
+const genero = await Genero.findByIdAndDelete(req.params.id)
+res.redirect("/genero/lst")
+});
 
 app.get("/musica/lst", async(req, res) => {
   const musicas = await Musica.find();
@@ -51,6 +55,11 @@ app.post("/musica/add", async (req, res) => {
   await Musica.create({ titulo, duracao, artista, anoLancamento });
   res.render("musica/addok");
 });
+app.get('/musica/del/:id', async (req, res) => {
+const musica = await Musica.findByIdAndDelete(req.params.id)
+res.redirect("/musica/lst")
+});
+
 
 app.get("/artista/lst", async(req, res) => {
   const artistas = await Artista.find();
@@ -64,6 +73,11 @@ app.post("/artista/add", async (req, res) => {
   await Artista.create({ nome, pais, anoInicio });
   res.render("artista/addok");
 });
+app.get('/artista/del/:id', async (req, res) => {
+const artista = await Artista.findByIdAndDelete(req.params.id)
+res.redirect("/artista/lst")
+});
+
 
 app.get("/playlist/lst", async(req, res) => {
   const playlists = await Playlist.find();
@@ -77,6 +91,11 @@ app.post("/playlist/add", async (req, res) => {
   await Playlist.create({ nome, musica1, musica2, musica3 });
   res.render("playlist/addok");
 });
+app.get('/playlist/del/:id', async (req, res) => {
+const playlist = await Playlist.findByIdAndDelete(req.params.id)
+res.redirect("/playlist/lst")
+});
+
 
 app.listen(PORT, ()=>{
  console.log(
